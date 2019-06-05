@@ -2,29 +2,60 @@ import React from 'react';
 import { Table, Header, Button, Icon, Reveal, Image, Grid, Segment } from 'semantic-ui-react'
 
 class List extends React.Component {
-    state = {
-        turkey: [
-            {
-                name: 'Turkey', countryCode: 'tr',
-            }
-        ],
-        kongo: [
-            {
-                name: 'Kongo', countryCode: '',
-            }
-        ],
-        france: [
-            {
-                name: 'France', countryCode: 'fr',
-            }
-        ],
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: true,
+            tomato: 0,
+            apple:0,
+            kakao:0,
+            banan:0,
+            plum:0,
+            ananas:0,
+            strawberry:0,
+        };
+    }
+
+    IncrementTomato = () => {
+        this.setState({ tomato: this.state.tomato + 1 });
+        this.setState({ tomatoX: (this.state.tomato + 1) * 12});
+    }
+
+    IncrementApple = () => {
+        this.setState({ apple: this.state.apple + 1 });
+        this.setState({ appleX: (this.state.apple + 1) * 7})
+    }
+
+    IncrementKakao = () => {
+        this.setState({ kakao: this.state.kakao + 1 });
+        this.setState({kakaoX: (this.state.kakao + 1) * 10})
+    }
+
+    IncrementBanan = () => {
+        this.setState({ banan: this.state.banan + 1 });
+        this.setState({bananX: (this.state.banan + 1) * 15})
+    }
+
+    IncrementPlum = () => {
+        this.setState({ plum: this.state.plum + 1});
+        this.setState({plumX: (this.state.plum + 1) * 17});
+    }
+
+    IncrementAnanas = () => {
+        this.setState({ ananas: this.state.ananas + 1});
+        this.setState({ananasX: (this.state.ananas + 1) * 7});
+    }
+
+    IncrementStrawberry = () => {
+        this.setState({ strawberry: this.state.strawberry +1});
+        this.setState({strawberryX: (this.state.strawberry + 1 ) *7})
     }
 
     render() {
         return (
             <Segment>
                 <h1> <Header as='h1' style={{ textAlign: 'center', marginTop: 50 }}> Exporting to Asia </Header></h1>
-                <Grid columns={2} relaxed='very' style={{margin:20}}>
+                <Grid columns={2} relaxed='very' style={{ margin: 20 }}>
                     <Grid.Column>
                         <br />
                         <Table basic='very' celled collapsing>
@@ -42,7 +73,7 @@ class List extends React.Component {
                                     <Table.HeaderCell> Add </Table.HeaderCell>
                                 </Table.Row>
                             </Table.Header>
-                            <Table.Body>
+                            <Table.Body style={{ textAlign: 'center' }}>
                                 <Table.Row>
                                     <Table.Cell>
                                         <Header as='h4' image style={{ textAlign: 'center' }}>
@@ -67,19 +98,19 @@ class List extends React.Component {
                                             <Header.Subheader>Made in Turkey</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell >  </Table.Cell>
+                                    <Table.Cell > <h4>{this.state.tomato}</h4> </Table.Cell>
                                     <Table.Cell>
                                         Turkey
                                     </Table.Cell>
-                                    <Table.Cell> </Table.Cell>
+                                    <Table.Cell> Azerbajcan </Table.Cell>
                                     <Table.Cell> 2200 </Table.Cell>
                                     <Table.Cell> 13/02/2019 </Table.Cell>
                                     <Table.Cell> 17/02/2019 </Table.Cell>
                                     <Table.Cell> 86:45:00 </Table.Cell>
-                                    <Table.Cell> $</Table.Cell>
+                                    <Table.Cell> <h4>${this.state.tomatoX}</h4></Table.Cell>
                                     <Table.Cell>
-                                        <Button animated='vertical'>
-                                            <Button.Content hidden>Shop</Button.Content>
+                                        <Button onClick={this.IncrementTomato} animated='vertical'>
+                                            <Button.Content hidden> Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
                                             </Button.Content>
@@ -110,16 +141,16 @@ class List extends React.Component {
                                             <Header.Subheader>Made in France</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>{this.state.apple}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> Korea</Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 3420 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 19/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 126:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $ </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}>  <h4>${this.state.appleX}</h4></Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}>
-                                        <Button animated='vertical'>
+                                        <Button onClick={this.IncrementApple} animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
@@ -154,16 +185,16 @@ class List extends React.Component {
                                             <Header.Subheader> Made in Kongo</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>{this.state.kakao}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> Kongo </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> Pakistan</Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 600 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 14/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 16:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $ </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>${this.state.kakaoX}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}>
-                                        <Button animated='vertical'>
+                                        <Button onClick={this.IncrementKakao} animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
@@ -195,16 +226,16 @@ class List extends React.Component {
                                             <Header.Subheader>Made in France</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>{this.state.banan}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> India</Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 3420 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 19/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 126:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $ </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>${this.state.bananX}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}>
-                                        <Button animated='vertical'>
+                                        <Button onClick={this.IncrementBanan} animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
@@ -236,16 +267,16 @@ class List extends React.Component {
                                             <Header.Subheader>Made in France</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>{this.state.plum}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> Azerbajcan</Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 3420 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 19/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 126:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $ </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>${this.state.plumX}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}>
-                                        <Button animated='vertical'>
+                                        <Button onClick={this.IncrementPlum} animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
@@ -277,16 +308,15 @@ class List extends React.Component {
                                             <Header.Subheader>Made in France</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>{this.state.ananas}</h4> </Table.Cell>                                    <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> China</Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 3420 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 19/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 126:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $ </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>${this.state.ananasX}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}>
-                                        <Button animated='vertical'>
+                                        <Button onClick={this.IncrementAnanas} animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
@@ -318,16 +348,15 @@ class List extends React.Component {
                                             <Header.Subheader>Made in France</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>{this.state.strawberry}</h4> </Table.Cell>                                    <Table.Cell style={{ textAlign: 'center' }}> France </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> Kirgistan</Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 3420 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 19/02/2019 </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}> 126:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $ </Table.Cell>
+                                    <Table.Cell style={{ textAlign: 'center' }}> <h4>${this.state.strawberryX}</h4> </Table.Cell>
                                     <Table.Cell style={{ textAlign: 'center' }}>
-                                        <Button animated='vertical'>
+                                        <Button onClick={this.IncrementStrawberry} animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
                                                 <Icon name='plus' />
@@ -341,7 +370,7 @@ class List extends React.Component {
                     </Grid.Column>
                 </Grid>
                 <Grid.Column>
-                    {/* <Button animated>
+                    <Button animated>
                         <Button.Content visible>Next</Button.Content>
                         <Button.Content hidden>
                             <Icon name='arrow right' />
@@ -350,7 +379,7 @@ class List extends React.Component {
                     <Button animated='fade'>
                         <Button.Content visible>Sign-up for a Pro account</Button.Content>
                         <Button.Content hidden>$12.99 a month</Button.Content>
-                    </Button> */}
+                    </Button> 
                 </Grid.Column>
             </Segment>
         )

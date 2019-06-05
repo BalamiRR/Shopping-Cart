@@ -2,13 +2,16 @@ import React from 'react';
 import { Step, Icon, List, Table, Segment, Divider, Grid } from 'semantic-ui-react'
 
 class Shopping extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
         return (
             <Segment>
                 <Grid columns={2} relaxed='very'>
                     <Grid.Column>
                         <Table >
-                            <h1 style={{ margin: 25 }}>Total Taken</h1>
+                            <h1 style={{ margin: 25,textDecorationLine:'underline'}}>Total Taken</h1>
                             <List style={{ margin: 50 }}>
                                 <List.Item >
                                     <List.Icon name='angle right' />
@@ -84,37 +87,38 @@ class Shopping extends React.Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Table>
-                            <h1 style={{ margin: 25 }}>Total Taken</h1>
-                            <List style={{ margin: 50 }}>
+                            <h1 style={{ margin: 25,textDecorationLine:'underline' }}>Shop</h1>
+                            <h3 style={{ margin: 25, textDecorationLine:'underline'}}>Total :</h3>
+                            <List style={{ margin: 10 }}>
                                 <List.Item >
-                                    <List.Icon name='angle right' />
+                                    <List.Icon name='angle double right' />
                                     <List.Content>
                                         <List.Header>
                                             zl
                                     </List.Header>
                                         <List.Description>
-                                            .  zl
+                                            zl
                                     </List.Description>
                                     </List.Content>
                                 </List.Item>
                             </List>
-                                <Step.Group size='mini'>
-                                    <Step active>
-                                        <Icon name='payment' />
-                                        <Step.Content>
-                                            <Step.Title>Billing</Step.Title>
-                                            <Step.Description>Enter billing information</Step.Description>
-                                        </Step.Content>
-                                    </Step>
-                                </Step.Group>
+                            <Step.Group size='mini'>
+                                <Step active>
+                                    <Icon name='payment' />
+                                    <Step.Content>
+                                        <Step.Title>Billing</Step.Title>
+                                        <Step.Description>Enter billing information</Step.Description>
+                                    </Step.Content>
+                                </Step>
+                            </Step.Group>
                         </Table>
                     </Grid.Column>
                 </Grid>
-                    <Divider vertical></Divider>
+                <Divider vertical></Divider>
             </Segment>
-                )
-            }
-        }
-        
-        
+        )
+    }
+}
+
+
 export default Shopping;
