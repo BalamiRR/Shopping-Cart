@@ -67,17 +67,17 @@ class List extends React.Component {
                                             <Header.Subheader>Made in Turkey</Header.Subheader>
                                         </Header>
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>  </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>
+                                    <Table.Cell >  </Table.Cell>
+                                    <Table.Cell>
                                         Turkey
                                     </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> 2200 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> 13/02/2019 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> 17/02/2019 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> 86:45:00 </Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}> $</Table.Cell>
-                                    <Table.Cell style={{ textAlign: 'center' }}>
+                                    <Table.Cell> </Table.Cell>
+                                    <Table.Cell> 2200 </Table.Cell>
+                                    <Table.Cell> 13/02/2019 </Table.Cell>
+                                    <Table.Cell> 17/02/2019 </Table.Cell>
+                                    <Table.Cell> 86:45:00 </Table.Cell>
+                                    <Table.Cell> $</Table.Cell>
+                                    <Table.Cell>
                                         <Button animated='vertical'>
                                             <Button.Content hidden>Shop</Button.Content>
                                             <Button.Content visible>
