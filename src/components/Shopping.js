@@ -11,8 +11,8 @@ class Shopping extends React.Component {
                 <Grid columns={2} relaxed='very'>
                     <Grid.Column>
                         <Table >
-                            <h1 style={{ margin: 25,textDecorationLine:'underline'}}>Total Taken</h1>
-                            <List style={{ margin: 50 }}>
+                            <h1 style={{ margin: 25,textDecorationLine:'underline'}}> Shop </h1>
+                            <List style={{ margin: 20 }}>
                                 <List.Item >
                                     <List.Icon name='angle right' />
                                     <List.Content>
@@ -87,8 +87,7 @@ class Shopping extends React.Component {
                     </Grid.Column>
                     <Grid.Column>
                         <Table>
-                            <h1 style={{ margin: 25,textDecorationLine:'underline' }}>Shop</h1>
-                            <h3 style={{ margin: 25, textDecorationLine:'underline'}}>Total :</h3>
+                            <h1 style={{ margin: 25,textDecorationLine:'underline' }}>Total Taken</h1>
                             <List style={{ margin: 10 }}>
                                 <List.Item >
                                     <List.Icon name='angle double right' />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Header, Button, Icon, Reveal, Image, Grid, Segment } from 'semantic-ui-react'
+import { Table, Header, Button, Icon, Reveal, Image, Grid, Segment } from 'semantic-ui-react';
 
 class List extends React.Component {
     constructor(props) {
@@ -7,55 +7,57 @@ class List extends React.Component {
         this.state = {
             show: true,
             tomato: 0,
-            apple:0,
-            kakao:0,
-            banan:0,
-            plum:0,
-            ananas:0,
-            strawberry:0,
+            apple: 0,
+            kakao: 0,
+            banan: 0,
+            plum: 0,
+            ananas: 0,
+            strawberry: 0,
         };
     }
 
     IncrementTomato = () => {
         this.setState({ tomato: this.state.tomato + 1 });
-        this.setState({ tomatoX: (this.state.tomato + 1) * 12});
+        this.setState({ tomatoX: (this.state.tomato + 1) * 12 });
     }
 
     IncrementApple = () => {
         this.setState({ apple: this.state.apple + 1 });
-        this.setState({ appleX: (this.state.apple + 1) * 7})
+        this.setState({ appleX: (this.state.apple + 1) * 7 })
     }
 
     IncrementKakao = () => {
         this.setState({ kakao: this.state.kakao + 1 });
-        this.setState({kakaoX: (this.state.kakao + 1) * 10})
+        this.setState({ kakaoX: (this.state.kakao + 1) * 10 })
     }
 
     IncrementBanan = () => {
         this.setState({ banan: this.state.banan + 1 });
-        this.setState({bananX: (this.state.banan + 1) * 15})
+        this.setState({ bananX: (this.state.banan + 1) * 15 })
     }
 
     IncrementPlum = () => {
-        this.setState({ plum: this.state.plum + 1});
-        this.setState({plumX: (this.state.plum + 1) * 17});
+        this.setState({ plum: this.state.plum + 1 });
+        this.setState({ plumX: (this.state.plum + 1) * 17 });
     }
 
     IncrementAnanas = () => {
-        this.setState({ ananas: this.state.ananas + 1});
-        this.setState({ananasX: (this.state.ananas + 1) * 7});
+        this.setState({ ananas: this.state.ananas + 1 });
+        this.setState({ ananasX: (this.state.ananas + 1) * 7 });
     }
 
     IncrementStrawberry = () => {
-        this.setState({ strawberry: this.state.strawberry +1});
-        this.setState({strawberryX: (this.state.strawberry + 1 ) *7})
+        this.setState({ strawberry: this.state.strawberry + 1 });
+        this.setState({ strawberryX: (this.state.strawberry + 1) * 20 })
     }
 
     render() {
         return (
             <Segment>
-                <h1> <Header as='h1' style={{ textAlign: 'center', marginTop: 50 }}> Exporting to Asia </Header></h1>
-                <Grid columns={2} relaxed='very' style={{ margin: 20 }}>
+                <div class="ui inverted segment">
+                    <h1> <Header as='h1' style={{ textAlign: 'center', marginTop: 10, color: '#FFF' }}> Exporting to Asia </Header></h1>
+                </div>
+                <Grid columns={2} relaxed='very' style={{ margin: 10 }}>
                     <Grid.Column>
                         <br />
                         <Table basic='very' celled collapsing>
@@ -331,7 +333,7 @@ class List extends React.Component {
                                                 Strawberry
                                         </Header.Content>
                                             <Header.Subheader>
-                                                $7
+                                                $20
                                             </Header.Subheader>
                                             <Reveal animated='small fade'>
                                                 <Reveal.Content visible>
@@ -370,16 +372,14 @@ class List extends React.Component {
                     </Grid.Column>
                 </Grid>
                 <Grid.Column>
-                    <Button animated>
-                        <Button.Content visible>Next</Button.Content>
-                        <Button.Content hidden>
-                            <Icon name='arrow right' />
-                        </Button.Content>
-                    </Button>
-                    <Button animated='fade'>
-                        <Button.Content visible>Sign-up for a Pro account</Button.Content>
-                        <Button.Content hidden>$12.99 a month</Button.Content>
-                    </Button> 
+                    <div class="ui inverted segment">
+                        <div class="ui animated fade button" tabindex="0">
+                            <div class="visible content">Add to Shop</div>
+                            <div class="hidden content">
+                                <Icon name='arrow right' style={{ color: 'red' }} />
+                            </div>
+                        </div>
+                    </div>
                 </Grid.Column>
             </Segment>
         )
@@ -387,3 +387,34 @@ class List extends React.Component {
 }
 
 export default List;
+
+{/* <Button animated>
+    <Button.Content visible>Next</Button.Content>
+    <Button.Content hidden>
+        <Icon name='arrow right' />
+    </Button.Content> 
+</Button>  */}
+
+
+
+
+        //<div>
+        //    <Menu.Item >
+        //        <Link to="/HomePage" ><Icon type="user" />Home Page | </Link>
+        //        <Link to="/UserPage" ><Icon type="user" /> User Page | </Link>
+        //        <Link to="/AboutPage" ><Icon type="user" /> About Page | </Link>
+        //        <Link to="/ProfilePage" ><Icon type="user" /> Profile Page | </Link>
+        //    </Menu.Item>
+        //</div> 
+
+
+
+
+
+
+
+
+
+
+
+
